@@ -1,0 +1,528 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProtoToType generates type definition correctly 1`] = `
+declare namespace Sample {
+  namespace SampleService {
+    namespace GetSampleData {
+      const Endpoint: "(google.api.http).post";
+      const Url: "/sample/data/get";
+      interface Response {
+        data?: Messages.SampleData;
+      }
+      namespace Response {}
+      interface Request {
+        id?: string;
+      }
+      namespace Request {}
+    }
+    namespace SetSampleData {
+      const Endpoint: "(google.api.http).post";
+      const Url: "/sample/data/set";
+      interface Response {
+        status?: Enums.SampleStatus;
+      }
+      namespace Response {}
+      interface Request {
+        id?: string;
+        data?: Messages.SampleData;
+      }
+      namespace Request {}
+    }
+  }
+  namespace Messages {
+    interface SampleData {
+      size?: number;
+      id?: string;
+      content?: string;
+      status?: Enums.SampleStatus;
+      createdAt?: Externals.google.protobuf.Timestamp;
+      updatedAt?: Externals.google.protobuf.Timestamp[];
+      extra?: 100;
+      disabledAt?: Externals.google.protobuf.Timestamp;
+      deletedAt?: Externals.google.protobuf.Timestamp;
+      statusMap?: Record<string, Enums.SampleStatus>;
+    }
+    namespace SampleData {
+      type sampleOneof =
+        | { disabledAt: Externals.google.protobuf.Timestamp; deletedAt?: never }
+        | { disabledAt?: never; deletedAt: Externals.google.protobuf.Timestamp }
+        | { disabledAt?: never; deletedAt?: never };
+    }
+  }
+  namespace Enums {
+    type SampleStatus =
+      | SampleStatus.UNKNOWN
+      | SampleStatus.ACTIVE
+      | SampleStatus.INACTIVE;
+    namespace SampleStatus {
+      type UNKNOWN = "UNKNOWN";
+      namespace UNKNOWN {
+        const str: "UNKNOWN";
+        const num: 0;
+      }
+      type ACTIVE = "ACTIVE";
+      namespace ACTIVE {
+        const str: "ACTIVE";
+        const num: 1;
+      }
+      type INACTIVE = "INACTIVE";
+      namespace INACTIVE {
+        const str: "INACTIVE";
+        const num: 2;
+      }
+    }
+  }
+  namespace Externals {
+    namespace google {
+      namespace protobuf {
+        interface Timestamp {
+          seconds?: number;
+          nanos?: number;
+        }
+        namespace Timestamp {}
+      }
+    }
+  }
+}
+
+`;
+
+exports[`ProtoToType logs if unresolved type found 1`] = `
+declare namespace Sample {
+  namespace SampleService {
+    namespace GetSampleData {
+      const Endpoint: "(google.api.http).post";
+      const Url: "/sample/data/get";
+      interface Response {
+        data?: Messages.SampleData;
+      }
+      namespace Response {}
+      interface Request {
+        id?: string;
+      }
+      namespace Request {}
+    }
+    namespace SetSampleData {
+      const Endpoint: "(google.api.http).post";
+      const Url: "/sample/data/set";
+      interface Response {
+        status?: Enums.SampleStatus;
+      }
+      namespace Response {}
+      interface Request {
+        id?: string;
+        data?: Messages.SampleData;
+      }
+      namespace Request {}
+    }
+  }
+  namespace Messages {
+    interface SampleData {
+      size?: int32;
+      id?: string;
+      content?: string;
+      status?: Enums.SampleStatus;
+      createdAt?: Externals.google.protobuf.Timestamp;
+      updatedAt?: Externals.google.protobuf.Timestamp[];
+      extra?: 100;
+      disabledAt?: Externals.google.protobuf.Timestamp;
+      deletedAt?: Externals.google.protobuf.Timestamp;
+      statusMap?: Record<string, Enums.SampleStatus>;
+    }
+    namespace SampleData {
+      type sampleOneof =
+        | { disabledAt: Externals.google.protobuf.Timestamp; deletedAt?: never }
+        | { disabledAt?: never; deletedAt: Externals.google.protobuf.Timestamp }
+        | { disabledAt?: never; deletedAt?: never };
+    }
+  }
+  namespace Enums {
+    type SampleStatus =
+      | SampleStatus.UNKNOWN
+      | SampleStatus.ACTIVE
+      | SampleStatus.INACTIVE;
+    namespace SampleStatus {
+      type UNKNOWN = "UNKNOWN";
+      namespace UNKNOWN {
+        const str: "UNKNOWN";
+        const num: 0;
+      }
+      type ACTIVE = "ACTIVE";
+      namespace ACTIVE {
+        const str: "ACTIVE";
+        const num: 1;
+      }
+      type INACTIVE = "INACTIVE";
+      namespace INACTIVE {
+        const str: "INACTIVE";
+        const num: 2;
+      }
+    }
+  }
+  namespace Externals {
+    namespace google {
+      namespace protobuf {
+        interface Timestamp {
+          seconds?: int64;
+          nanos?: int32;
+        }
+        namespace Timestamp {}
+      }
+    }
+  }
+}
+
+`;
+
+exports[`ProtoToType other formats: enumFormat: mixed 1`] = `
+declare namespace Sample {
+  namespace SampleService {
+    namespace GetSampleData {
+      const Endpoint: "(google.api.http).post";
+      const Url: "/sample/data/get";
+      interface Response {
+        data?: Messages.SampleData;
+      }
+      namespace Response {}
+      interface Request {
+        id?: string;
+      }
+      namespace Request {}
+    }
+    namespace SetSampleData {
+      const Endpoint: "(google.api.http).post";
+      const Url: "/sample/data/set";
+      interface Response {
+        status?: Enums.SampleStatus;
+      }
+      namespace Response {}
+      interface Request {
+        id?: string;
+        data?: Messages.SampleData;
+      }
+      namespace Request {}
+    }
+  }
+  namespace Messages {
+    interface SampleData {
+      size?: number;
+      id?: string;
+      content?: string;
+      status?: Enums.SampleStatus;
+      createdAt?: Externals.google.protobuf.Timestamp;
+      updatedAt?: Externals.google.protobuf.Timestamp[];
+      extra?: 100;
+      disabledAt?: Externals.google.protobuf.Timestamp;
+      deletedAt?: Externals.google.protobuf.Timestamp;
+      statusMap?: Record<string, Enums.SampleStatus>;
+    }
+    namespace SampleData {
+      type sampleOneof =
+        | { disabledAt: Externals.google.protobuf.Timestamp; deletedAt?: never }
+        | { disabledAt?: never; deletedAt: Externals.google.protobuf.Timestamp }
+        | { disabledAt?: never; deletedAt?: never };
+    }
+  }
+  namespace Enums {
+    type SampleStatus =
+      | SampleStatus.UNKNOWN
+      | SampleStatus.ACTIVE
+      | SampleStatus.INACTIVE;
+    namespace SampleStatus {
+      type _num = Extract<SampleStatus, number>;
+      type _str = Extract<SampleStatus, string>;
+      type UNKNOWN = "UNKNOWN" | 0;
+      namespace UNKNOWN {
+        const str: "UNKNOWN";
+        const num: 0;
+      }
+      type ACTIVE = "ACTIVE" | 1;
+      namespace ACTIVE {
+        const str: "ACTIVE";
+        const num: 1;
+      }
+      type INACTIVE = "INACTIVE" | 2;
+      namespace INACTIVE {
+        const str: "INACTIVE";
+        const num: 2;
+      }
+    }
+  }
+  namespace Externals {
+    namespace google {
+      namespace protobuf {
+        interface Timestamp {
+          seconds?: number;
+          nanos?: number;
+        }
+        namespace Timestamp {}
+      }
+    }
+  }
+}
+
+`;
+
+exports[`ProtoToType other formats: enumFormat: num 1`] = `
+declare namespace Sample {
+  namespace SampleService {
+    namespace GetSampleData {
+      const Endpoint: "(google.api.http).post";
+      const Url: "/sample/data/get";
+      interface Response {
+        data?: Messages.SampleData;
+      }
+      namespace Response {}
+      interface Request {
+        id?: string;
+      }
+      namespace Request {}
+    }
+    namespace SetSampleData {
+      const Endpoint: "(google.api.http).post";
+      const Url: "/sample/data/set";
+      interface Response {
+        status?: Enums.SampleStatus;
+      }
+      namespace Response {}
+      interface Request {
+        id?: string;
+        data?: Messages.SampleData;
+      }
+      namespace Request {}
+    }
+  }
+  namespace Messages {
+    interface SampleData {
+      size?: number;
+      id?: string;
+      content?: string;
+      status?: Enums.SampleStatus;
+      createdAt?: Externals.google.protobuf.Timestamp;
+      updatedAt?: Externals.google.protobuf.Timestamp[];
+      extra?: 100;
+      disabledAt?: Externals.google.protobuf.Timestamp;
+      deletedAt?: Externals.google.protobuf.Timestamp;
+      statusMap?: Record<string, Enums.SampleStatus>;
+    }
+    namespace SampleData {
+      type sampleOneof =
+        | { disabledAt: Externals.google.protobuf.Timestamp; deletedAt?: never }
+        | { disabledAt?: never; deletedAt: Externals.google.protobuf.Timestamp }
+        | { disabledAt?: never; deletedAt?: never };
+    }
+  }
+  namespace Enums {
+    type SampleStatus =
+      | SampleStatus.UNKNOWN
+      | SampleStatus.ACTIVE
+      | SampleStatus.INACTIVE;
+    namespace SampleStatus {
+      type UNKNOWN = 0;
+      namespace UNKNOWN {
+        const str: "UNKNOWN";
+        const num: 0;
+      }
+      type ACTIVE = 1;
+      namespace ACTIVE {
+        const str: "ACTIVE";
+        const num: 1;
+      }
+      type INACTIVE = 2;
+      namespace INACTIVE {
+        const str: "INACTIVE";
+        const num: 2;
+      }
+    }
+  }
+  namespace Externals {
+    namespace google {
+      namespace protobuf {
+        interface Timestamp {
+          seconds?: number;
+          nanos?: number;
+        }
+        namespace Timestamp {}
+      }
+    }
+  }
+}
+
+`;
+
+exports[`ProtoToType other formats: strictOneof: hybrid 1`] = `
+declare namespace Sample {
+  namespace SampleService {
+    namespace GetSampleData {
+      const Endpoint: "(google.api.http).post";
+      const Url: "/sample/data/get";
+      interface Response {
+        data?: Messages.SampleData;
+      }
+      namespace Response {}
+      interface Request {
+        id?: string;
+      }
+      namespace Request {}
+    }
+    namespace SetSampleData {
+      const Endpoint: "(google.api.http).post";
+      const Url: "/sample/data/set";
+      interface Response {
+        status?: Enums.SampleStatus;
+      }
+      namespace Response {}
+      interface Request {
+        id?: string;
+        data?: Messages.SampleData;
+      }
+      namespace Request {}
+    }
+  }
+  namespace Messages {
+    interface SampleData {
+      size?: number;
+      id?: string;
+      content?: string;
+      status?: Enums.SampleStatus;
+      createdAt?: Externals.google.protobuf.Timestamp;
+      updatedAt?: Externals.google.protobuf.Timestamp[];
+      extra?: 100;
+      statusMap?: Record<string, Enums.SampleStatus>;
+    }
+    namespace SampleData {
+      type _strict = SampleData & Messages.SampleData.sampleOneof;
+      type sampleOneof =
+        | { disabledAt: Externals.google.protobuf.Timestamp; deletedAt?: never }
+        | { disabledAt?: never; deletedAt: Externals.google.protobuf.Timestamp }
+        | { disabledAt?: never; deletedAt?: never };
+    }
+  }
+  namespace Enums {
+    type SampleStatus =
+      | SampleStatus.UNKNOWN
+      | SampleStatus.ACTIVE
+      | SampleStatus.INACTIVE;
+    namespace SampleStatus {
+      type UNKNOWN = "UNKNOWN";
+      namespace UNKNOWN {
+        const str: "UNKNOWN";
+        const num: 0;
+      }
+      type ACTIVE = "ACTIVE";
+      namespace ACTIVE {
+        const str: "ACTIVE";
+        const num: 1;
+      }
+      type INACTIVE = "INACTIVE";
+      namespace INACTIVE {
+        const str: "INACTIVE";
+        const num: 2;
+      }
+    }
+  }
+  namespace Externals {
+    namespace google {
+      namespace protobuf {
+        interface Timestamp {
+          seconds?: number;
+          nanos?: number;
+        }
+        namespace Timestamp {}
+      }
+    }
+  }
+}
+
+`;
+
+exports[`ProtoToType other formats: strictOneof: true 1`] = `
+declare namespace Sample {
+  namespace SampleService {
+    namespace GetSampleData {
+      const Endpoint: "(google.api.http).post";
+      const Url: "/sample/data/get";
+      interface Response {
+        data?: Messages.SampleData;
+      }
+      namespace Response {}
+      interface Request {
+        id?: string;
+      }
+      namespace Request {}
+    }
+    namespace SetSampleData {
+      const Endpoint: "(google.api.http).post";
+      const Url: "/sample/data/set";
+      interface Response {
+        status?: Enums.SampleStatus;
+      }
+      namespace Response {}
+      interface Request {
+        id?: string;
+        data?: Messages.SampleData;
+      }
+      namespace Request {}
+    }
+  }
+  namespace Messages {
+    type SampleData = SampleData._base & Messages.SampleData.sampleOneof;
+    namespace SampleData {
+      interface _base {
+        size?: number;
+        id?: string;
+        content?: string;
+        status?: Enums.SampleStatus;
+        createdAt?: Externals.google.protobuf.Timestamp;
+        updatedAt?: Externals.google.protobuf.Timestamp[];
+        extra?: 100;
+        statusMap?: Record<string, Enums.SampleStatus>;
+      }
+      type sampleOneof =
+        | { disabledAt: Externals.google.protobuf.Timestamp; deletedAt?: never }
+        | { disabledAt?: never; deletedAt: Externals.google.protobuf.Timestamp }
+        | { disabledAt?: never; deletedAt?: never };
+    }
+  }
+  namespace Enums {
+    type SampleStatus =
+      | SampleStatus.UNKNOWN
+      | SampleStatus.ACTIVE
+      | SampleStatus.INACTIVE;
+    namespace SampleStatus {
+      type UNKNOWN = "UNKNOWN";
+      namespace UNKNOWN {
+        const str: "UNKNOWN";
+        const num: 0;
+      }
+      type ACTIVE = "ACTIVE";
+      namespace ACTIVE {
+        const str: "ACTIVE";
+        const num: 1;
+      }
+      type INACTIVE = "INACTIVE";
+      namespace INACTIVE {
+        const str: "INACTIVE";
+        const num: 2;
+      }
+    }
+  }
+  namespace Externals {
+    namespace google {
+      namespace protobuf {
+        interface Timestamp {
+          seconds?: number;
+          nanos?: number;
+        }
+        namespace Timestamp {}
+      }
+    }
+  }
+}
+
+`;
+
+exports[`ProtoToType warns if entrypoint wrongs 1`] = `
+declare namespace Sample {}
+
+`;

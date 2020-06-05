@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package sample.package;
+
+import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+
+service SampleService {
+  rpc GetSampleData(GetSampleDataRequest) returns (GetSampleDataResponse) {
+    option (google.api.http) = {
+      post : "/sample/data/get"
+    };
+  };
+
+  rpc SetSampleData(SetSampleDataRequest) returns (SetSampleDataResponse) {
+    option (google.api.http) = {
+      post : "/sample/data/set"
+    };
+  };
+}
+
+message GetSampleDataRequest {
+  string id = 1;
+}
+
+message GetSampleDataResponse {
+  SampleData data = 1;
+}
+
+message SetSampleDataRequest {
+  string id = 1;
+  SampleData data = 2;
+}
+
+message SetSampleDataResponse {
+  SampleStatus status = 1;
+}
+
+message SampleData {
+  int32 size = 1;
+  string id = 2;
+  optional string content = 3;
+  SampleStatus status = 4;
+  google.protobuf.Timestamp created_at = 5;
+  repeated google.protobuf.Timestamp updated_at = 6;
+  predefined.type extra = 7;
+  oneof sample_oneof {
+    google.protobuf.Timestamp disabled_at = 8;
+    google.protobuf.Timestamp deleted_at = 9;
+  }
+  map<string, SampleStatus> status_map = 10;
+}
+
+enum SampleStatus {
+  UNKNOWN = 0;
+  ACTIVE = 1;
+  INACTIVE = 2;
+}

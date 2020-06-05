@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`nestSerializer works correctly 1`] = `"namespace Address {namespace Japan {namespace Tokyo {type Minato = { inTokyo: true; endWithA: false };type Chiyoda = { inTokyo: true; endWithA: true };}namespace Osaka {type Umeda = { inTokyo: false; endWithA: true };}}}"`;
+
+exports[`nestSerializer works correctly 2`] = `
+"namespace Address {
+  namespace Japan {
+    namespace Tokyo {
+      type Minato = { inTokyo: true; endWithA: false };
+      type Chiyoda = { inTokyo: true; endWithA: true };
+    }
+    namespace Osaka {
+      type Umeda = { inTokyo: false; endWithA: true };
+    }
+  }
+}
+"
+`;
