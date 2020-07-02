@@ -1,8 +1,8 @@
 name: Publish
 
 on:
-  release:
-    types: published
+  push:
+    branches: master
 
 jobs:
   test:
@@ -34,9 +34,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-          registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm run build
-      - run: npm publish lib
+      - run: cd ./lib && npx semantic-release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+          NPM_TOKEN: ${{ secrets.npm_token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
