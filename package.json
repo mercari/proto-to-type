@@ -1,7 +1,7 @@
 {
   "name": "@mercari/proto-to-type",
   "version": "1.0.0",
-  "description": "Project description.",
+  "description": "proto-to-type is almost pure Node.js library that generates type definition for TypeScript from Protocol Buffer file(.proto)",
   "main": "index.js",
   "scripts": {
     "build": "rimraf ./lib && tsc -p tsconfig.lib.json && cp package.json LICENSE README.md lib",
