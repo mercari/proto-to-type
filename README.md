@@ -1,4 +1,5 @@
 # proto-to-type
+[![npm version](https://badge.fury.io/js/%40mercari%2Fproto-to-type.svg)](https://badge.fury.io/js/%40mercari%2Fproto-to-type)
 
 `proto-to-type` is almost pure Node.js library that generates type definition for TypeScript from Protocol Buffer file(`.proto`).
 
