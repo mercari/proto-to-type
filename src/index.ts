@@ -1,5 +1,4 @@
 import { ProtoToType } from './proto-to-type';
-module.exports = Object.assign(ProtoToType, exports);
 export default ProtoToType;
 export * from './proto-to-type';
 
